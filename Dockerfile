@@ -8,6 +8,15 @@ RUN apt-get update \
                           libreadline-dev curl git-core zlib1g zlib1g-dev libssl-dev \
                           libxslt-dev libxml2-dev libpq-dev subversion autoconf
 
+RUN set -e && \
+    apt-get update -y && \
+    apt-get install -y make \
+    build-essential \
+    python-setuptools \
+    python2.7-dev && \
+    easy_install envtpl
+
+
 # Install RVM
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 \
     && curl -L https://get.rvm.io | bash -s stable
@@ -27,6 +36,8 @@ WORKDIR 3-enrich/emr-etl-runner
 RUN /bin/bash -l -c "bundle install --deployment"
 RUN /bin/bash -l -c "bundle exec bin/snowplow-emr-etl-runner --version"
 
+RUN mkdir /etc/snowplow/
+COPY conf/config.yml.tpl /etc/snowplow/config.yml.tpl
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
