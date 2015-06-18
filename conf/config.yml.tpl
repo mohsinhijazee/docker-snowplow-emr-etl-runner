@@ -41,12 +41,12 @@
     :task_instance_type: {{EMR_JOBFLOW_TASK_INSTANCE_TYPE}}
     :task_instance_bid: {{EMR_JOBFLOW_TASK_INSTANCE_BID}} # In USD. Adjust bid, or leave blank for non-spot-priced (i.e. on-demand) task instances
 :etl:
-  :job_name: {{ELT_JOB_NAME}} # Give your job a name
+  :job_name: {{ETL_JOB_NAME}} # Give your job a name
   :versions:
-    :hadoop_enrich: {{ELT_VERSIONS_HADOOP_ENRICH}} # Version of the Hadoop Enrichment process
-    :hadoop_shred: {{ELT_VERSIONS_HADOOP_SHRED}} # Version of the Hadoop Shredding process
-  :collector_format: {{ELT_ETL_COLLECTOR_FORMAT}} # Or 'clj-tomcat' for the Clojure Collector, or 'thrift' for Thrift records, or 'tsv/com.amazon.aws.cloudfront/wd_access_log' for Cloudfront access logs
-  :continue_on_unexpected_error: {{ELT_CONTINUE_ON_UNEXPECTED_ERROR}} # Set to 'true' (and set :out_errors: above) if you don't want any exceptions thrown from ETL
+    :hadoop_enrich: {{ETL_VERSIONS_HADOOP_ENRICH}} # Version of the Hadoop Enrichment process
+    :hadoop_shred: {{ETL_VERSIONS_HADOOP_SHRED}} # Version of the Hadoop Shredding process
+  :collector_format: {{ETL_ETL_COLLECTOR_FORMAT}} # Or 'clj-tomcat' for the Clojure Collector, or 'thrift' for Thrift records, or 'tsv/com.amazon.aws.cloudfront/wd_access_log' for Cloudfront access logs
+  :continue_on_unexpected_error: {{ETL_CONTINUE_ON_UNEXPECTED_ERROR}} # Set to 'true' (and set :out_errors: above) if you don't want any exceptions thrown from ETL
 :iglu:
   :schema: iglu:com.snowplowanalytics.iglu/resolver-config/jsonschema/1-0-0
   :data:

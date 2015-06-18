@@ -1,5 +1,5 @@
 SHELL = /bin/bash
-IMAGE_NAME ?= dubizzledotcom/emr-etl-runner
+IMAGE_NAME ?= dubizzledotcom/snowplow-emr-etl-runner
 IMAGE_VERSION ?= 0.0.1
 
 .PHONY: docker
