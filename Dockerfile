@@ -29,9 +29,6 @@ RUN /bin/bash -l -c "gem install bundler --no-ri --no-rdoc"
 # Checkout Snowplow repo
 RUN git clone git://github.com/snowplow/snowplow.git
 
-WORKDIR snowplow
-RUN git checkout feature/r66-master
-
 WORKDIR 3-enrich/emr-etl-runner
 RUN /bin/bash -l -c "bundle install --deployment"
 RUN /bin/bash -l -c "bundle exec bin/snowplow-emr-etl-runner --version"
