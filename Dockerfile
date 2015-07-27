@@ -34,7 +34,9 @@ RUN /bin/bash -l -c "bundle install --deployment"
 RUN /bin/bash -l -c "bundle exec bin/snowplow-emr-etl-runner --version"
 
 RUN mkdir /etc/snowplow/
+RUN mkdir /etc/snowplow/enrichments
 COPY conf/config.yml.tpl /etc/snowplow/config.yml.tpl
+COPY conf/enrichments /etc/snowplow/enrichments
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
