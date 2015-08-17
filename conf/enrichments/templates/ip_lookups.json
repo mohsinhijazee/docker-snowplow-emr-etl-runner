@@ -5,7 +5,7 @@
 
 		"name": "ip_lookups",
 		"vendor": "com.snowplowanalytics.snowplow",
-		"enabled": {{ ENABLE_IP_LOOKUPS | default(true) }},
+		"enabled": {{ ENABLE_IP_LOOKUPS | default("true") }},
 		"parameters": {
 			"geo": {
 				"database": "GeoLiteCity.dat",
