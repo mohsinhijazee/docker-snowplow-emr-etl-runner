@@ -5,7 +5,7 @@
 
 		"name": "referer_parser",
 		"vendor": "com.snowplowanalytics.snowplow",
-		"enabled": {{ ENABLE_REFERER_PARSER | default(true) }},
+		"enabled": {{ ENABLE_REFERER_PARSER | default("true") }},
 		"parameters": {
 			"internalDomains": []
 		}

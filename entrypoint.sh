@@ -13,4 +13,4 @@ done
 rm /etc/snowplow/*.tpl
 rm -r /etc/snowplow/enrichments/templates
 
-/bin/bash -l -c "bundle exec bin/snowplow-emr-etl-runner $SP_SKIP --config /etc/snowplow/config.yml"
+/bin/bash -l -c "bundle exec bin/snowplow-emr-etl-runner $SP_SKIP --config /etc/snowplow/config.yml --enrichments /etc/snowplow/enrichments/"

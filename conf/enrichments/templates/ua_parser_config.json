@@ -3,7 +3,7 @@
 
 	"data": {
 
-		"enabled": {{ ENABLE_UA_PARSER_CONFIG | default(true) }},
+		"enabled": {{ ENABLE_UA_PARSER_CONFIG | default("true") }},
 		"vendor": "com.snowplowanalytics.snowplow",
 		"name": "ua_parser_config",
 		"parameters": {}
