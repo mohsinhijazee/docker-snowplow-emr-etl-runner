@@ -59,3 +59,10 @@
         :connection:
           :http:
             :uri: http://iglucentral.com
+      - :name: "dubizzle's Iglu repository"
+        :priority: 0
+        :vendor_prefixes:
+          - com.dubizzle
+        :connection:
+          :http:
+            :uri: http://iglu.dbzstatic.com.s3-website-eu-west-1.amazonaws.com
